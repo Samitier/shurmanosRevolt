@@ -19,6 +19,12 @@
     <Filter Include="Archivos de encabezado\Engine">
       <UniqueIdentifier>{471b8399-8273-4813-87a7-ba78a277a532}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Archivos de encabezado\Assets">
+      <UniqueIdentifier>{b3b07bd2-bb0c-4a16-846e-154c2e86eb5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Archivos de código fuente\Assets">
+      <UniqueIdentifier>{c1b34c62-051f-4001-94ff-ec434fbee2bb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\TextureManager.cpp">
@@ -38,6 +44,9 @@
     </ClCompile>
     <ClCompile Include="src\PhysicEntity.cpp">
       <Filter>Archivos de código fuente\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Player.cpp">
+      <Filter>Archivos de código fuente\Assets</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +70,9 @@
     </ClInclude>
     <ClInclude Include="src\Utils.h">
       <Filter>Archivos de encabezado\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player.h">
+      <Filter>Archivos de encabezado\Assets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

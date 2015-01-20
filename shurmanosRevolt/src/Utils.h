@@ -1,9 +1,5 @@
 #pragma once
-#include <SFML/System.hpp>
-#include <SFML/Config.hpp>
-#include <SFML/Graphics.hpp>
-#include <Box2D/Box2D.h>
-using namespace sf;
+#include "Includes.h"
 
 #define SCREEN_WIDTH	800
 #define SCREEN_HEIGHT	600

@@ -3,6 +3,7 @@
 #include "TextureManager.h"
 #include "PhysicsEngine.h"
 #include "PhysicEntity.h"
+#include "Player.h"
 
 class Game {
 public:
@@ -24,7 +25,7 @@ private:
 	///only for testing
 	PhysicsEngine engine;
 	Sprite bkg;
-	PhysicEntity tank;
+	Player player;
 	PhysicEntity floor;
 
 };

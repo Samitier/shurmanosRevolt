@@ -1,19 +1,18 @@
 #pragma once
-#include "Includes.h"
+#include "Utils.h"
 
 class PhysicsEngine {
 
 public:
-	PhysicsEngine(void);
-	~PhysicsEngine(void);
-
 	static const float GRAVITY_FORCE;
 
-	//BASIC OPERATIONS:
-	void init();
+	PhysicsEngine(void): world(b2Vec2(0.0f, GRAVITY_FORCE)){}
+	~PhysicsEngine(void){}
 
+	//BASIC OPERATIONS:
+	void update();
 	b2World* getWorld();
 
 private:
-	b2World* world;
+	b2World world;
 };

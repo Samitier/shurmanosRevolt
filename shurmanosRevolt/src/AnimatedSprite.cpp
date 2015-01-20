@@ -10,6 +10,7 @@ void AnimatedSprite::init(Texture *texture, Vector2<int> position, Vector2<int> 
 	height = size.y;
 	sprite.setTexture(*texture);
 	sprite.setPosition(position.x,position.y);
+	sprite.setOrigin(size.x/2, size.y/2);
 	frame = delay = 0;
 }
 
