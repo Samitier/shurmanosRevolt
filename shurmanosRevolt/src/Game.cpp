@@ -9,6 +9,11 @@ void Game::init() {
 	window = new RenderWindow(VideoMode(800, 600), "Shurmanos Revolt");
 	window->setVerticalSyncEnabled(true); //forces 60fps
 
+    //For now the physics engine doesn't know about the debug drawer.
+    engine.getWorld()->SetDebugDraw(new DebugDraw(window));
+    
+    debugRender = false;
+    
 	textureManager.init();
 	
 	b2BodyDef groundBodyDef;
@@ -35,6 +40,9 @@ void Game::processInput() {
 	Event event;
     while (window->pollEvent(event)) {
         switch(event.type) {
+            case sf::Event::KeyPressed:
+            if(event.key.code == Keyboard::F2) debugRender = !debugRender;                
+            break;
 		case sf::Event::Closed: 
 			window->close();
 			break;
@@ -57,8 +65,9 @@ void Game::render() {
 
 	 window->draw(bkg);
 	 player.render(window);
+     if(debugRender) engine.getWorld()->DrawDebugData();
      //renders aqui
-
+     
      window->display();
 }
 

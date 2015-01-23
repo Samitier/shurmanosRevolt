@@ -6,7 +6,7 @@ class PhysicsEngine {
 public:
 	static const float GRAVITY_FORCE;
 
-	PhysicsEngine(void): world(b2Vec2(0.0f, GRAVITY_FORCE)){}
+	PhysicsEngine();
 	~PhysicsEngine(void){}
 
 	//BASIC OPERATIONS:
