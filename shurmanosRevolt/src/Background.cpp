@@ -17,7 +17,7 @@ void Background::update() {
 }
 
 void Background::render(RenderWindow *window) {
-	for each(AnimatedSprite layer in layers) {
+	for each (AnimatedSprite layer in layers) {
 		layer.render(window);
 	}
 }

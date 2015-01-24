@@ -2,7 +2,7 @@ SOURCES := $(wildcard src/*.cpp)
 OBJECTS := $(patsubst src/%.cpp,obj/%.o,$(SOURCES))
 
 CXX=clang++
-CXX_FLAGS=-O0 -g -DGLIBCXX_DEBUG -Wall
+CXX_FLAGS=-O0 -g -DGLIBCXX_DEBUG -Wall -std=c++11
 
 all: bin obj bin/main.x
 

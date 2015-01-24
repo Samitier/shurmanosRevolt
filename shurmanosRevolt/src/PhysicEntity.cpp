@@ -7,16 +7,24 @@ void PhysicEntity::init(Texture *tex, Vector2<int> pos, Vector2<int> siz){
 	sprite.init(tex,pos,siz);
 }
 
-void PhysicEntity::setPhysics(b2World *world, std::vector<b2FixtureDef*> *fixtureDef, bool fixedRotation, bool isStatic){
+void PhysicEntity::setPhysics(b2World *world, std::vector<b2FixtureDef*> *fixtureDef, std::vector<ColliderTags>* tags, 
+                              bool fixedRotation, bool isStatic){
 	b2BodyDef bodyDef;
 	if(!isStatic) bodyDef.type = b2_dynamicBody;
 	bodyDef.fixedRotation = fixedRotation;
 	b2Vec2 pos = Utils::pixelsToMeters(Vector2<int>(sprite.getPosition().x, sprite.getPosition().y));
 	bodyDef.position.Set(pos.x, pos.y);
 	body = world->CreateBody(&bodyDef);
-	for(int i=0; i<fixtureDef->size();++i) body->CreateFixture((*fixtureDef)[i]);
+	for(int i=0; i<fixtureDef->size();++i) {
+        b2Fixture* fixture = body->CreateFixture((*fixtureDef)[i]);
+        fixture->SetUserData((void*)((*tags)[i])); //Polymorphism at its finest
+    }
 }
 
+void PhysicEntity::setPhysics(b2World *world, std::vector<b2FixtureDef*> *fixtureDef, bool fixedRotation, bool isStatic){
+    std::vector<ColliderTags> v (fixtureDef->size(), COLLIDER_DEFAULT);
+    setPhysics(world, fixtureDef, &v, fixedRotation, isStatic);
+}
 
 void PhysicEntity::render(RenderWindow *window){
 	sprite.render(window);
