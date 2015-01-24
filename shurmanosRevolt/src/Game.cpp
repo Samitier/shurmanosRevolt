@@ -12,10 +12,10 @@ void Game::init() {
 	textureManager.init();
 	
 	b2BodyDef groundBodyDef;
-	groundBodyDef.position.Set(Utils::pixelsToMeters(Vector2<int>(0, 570)).x, Utils::pixelsToMeters(Vector2<int>(0, 450)).y);
+	groundBodyDef.position.Set(Utils::pixelsToMeters(Vector2<int>(0, 580)).x, Utils::pixelsToMeters(Vector2<int>(0, 600)).y);
 	b2Body* groundBody = engine.getWorld()->CreateBody(&groundBodyDef);
 	b2PolygonShape groundBox;
-	groundBox.SetAsBox(800/PIXELS_METER, 30/PIXELS_METER);
+	groundBox.SetAsBox(800/PIXELS_METER, 20/PIXELS_METER);
 	groundBody->CreateFixture(&groundBox, 0.0f);
 
 	bkg.setTexture(*textureManager.getTexture(TextureManager::TEX_BACKGROUND));
