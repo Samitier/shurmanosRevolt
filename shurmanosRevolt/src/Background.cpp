@@ -4,7 +4,7 @@ Background::Background(void){}
 Background::~Background(void){}
 
 void Background::init(std::vector<Texture*>textures) {
-	for each (Texture* tex in textures){
+	for(Texture* tex : textures){
        AnimatedSprite layer;
 	   layer.init(tex,Vector2<int>(0,0), Vector2<int>(0,0));
 	   layers.push_back(layer);
@@ -17,7 +17,7 @@ void Background::update() {
 }
 
 void Background::render(RenderWindow *window) {
-	for each(AnimatedSprite layer in layers) {
+	for(AnimatedSprite layer : layers) {
 		layer.render(window);
 	}
 }
