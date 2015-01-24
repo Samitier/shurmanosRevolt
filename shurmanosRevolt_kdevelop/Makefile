@@ -20,3 +20,5 @@ obj/%.o: src/%.cpp
 	@echo Compiling $< into $@
 	$(CXX) $(CXX_FLAGS) -Iinclude/SFML -Iinclude/Box2D -c $< -o $@
 	
+clean: 
+	rm obj/*.o bin/main.x

@@ -23,4 +23,14 @@ class Utils {
 		vect.y = SCREEN_HEIGHT - v.y*PIXELS_METER;
 		return vect;
 	}
+	
+	static int metersToPixels (float f) {
+        //TODO quick hack to avoid duplicating code, this needs fixing
+        return metersToPixels(b2Vec2(f,0)).x; 
+    }
+    
+    static float pixelsToMeters (int i) {
+        //TODO quick hack to avoid duplicating code, this needs fixing
+        return pixelsToMeters(b2Vec2(i,0)).x;
+    }
 };

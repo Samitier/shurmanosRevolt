@@ -3,7 +3,8 @@
 #include "TextureManager.h"
 #include "PhysicsEngine.h"
 #include "PhysicEntity.h"
-#include "Player.h"
+#include "Player.h" 
+#include "DebugDraw.h"
 
 class Game {
 public:
@@ -21,6 +22,9 @@ public:
 private:
 	RenderWindow* window;
 	TextureManager textureManager;
+    
+    //Is Debug drawing active?
+    bool debugRender; 
 
 	///only for testing
 	PhysicsEngine engine;
