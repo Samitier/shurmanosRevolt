@@ -16,14 +16,8 @@ void Game::init() {
     
 	textureManager.init();
 	
-	b2BodyDef groundBodyDef;
-	groundBodyDef.position.Set(Utils::pixelsToMeters(Vector2<int>(0, 580)).x, Utils::pixelsToMeters(Vector2<int>(0, 600)).y);
-	b2Body* groundBody = engine.getWorld()->CreateBody(&groundBodyDef);
-	b2PolygonShape groundBox;
-	groundBox.SetAsBox(800/PIXELS_METER, 20/PIXELS_METER);
-	groundBody->CreateFixture(&groundBox, 0.0f);
+	map.init(&textureManager,engine.getWorld());
 
-	bkg.setTexture(*textureManager.getTexture(TextureManager::TEX_BACKGROUND));
 	player.init(textureManager.getTexture(TextureManager::TEX_SPRITESHEET), Vector2<int>(400,0), engine.getWorld());
 }
 
@@ -55,18 +49,17 @@ void Game::processInput() {
 }
 
 void Game::update() {
+	map.update();
 	player.update();
 	engine.update();
-	//updates aqui
 }
 
 void Game::render() {
 	 window->clear();
 
-	 window->draw(bkg);
+	 map.render(window);
 	 player.render(window);
      if(debugRender) engine.getWorld()->DrawDebugData();
-     //renders aqui
      
      window->display();
 }

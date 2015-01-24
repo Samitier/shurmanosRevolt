@@ -5,6 +5,7 @@
 #include "PhysicEntity.h"
 #include "Player.h" 
 #include "DebugDraw.h"
+#include "Map.h"
 
 class Game {
 public:
@@ -28,9 +29,8 @@ private:
 
 	///only for testing
 	PhysicsEngine engine;
-	Sprite bkg;
+	Map map;
 	Player player;
-	PhysicEntity floor;
 
 };
 

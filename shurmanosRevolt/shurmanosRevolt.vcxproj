@@ -81,8 +81,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\AnimatedSprite.cpp" />
+    <ClCompile Include="src\Background.cpp" />
+    <ClCompile Include="src\DebugDraw.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Map.cpp" />
     <ClCompile Include="src\PhysicEntity.cpp" />
     <ClCompile Include="src\PhysicsEngine.cpp" />
     <ClCompile Include="src\Player.cpp" />
@@ -90,7 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AnimatedSprite.h" />
+    <ClInclude Include="src\Background.h" />
+    <ClInclude Include="src\DebugDraw.h" />
     <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\Map.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\Utils.h" />
     <ClInclude Include="src\Includes.h" />

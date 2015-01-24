@@ -31,6 +31,6 @@ class Utils {
     
     static float pixelsToMeters (int i) {
         //TODO quick hack to avoid duplicating code, this needs fixing
-        return pixelsToMeters(b2Vec2(i,0)).x;
+        return pixelsToMeters(Vector2<int> (i,0)).x;
     }
 };
