@@ -36,7 +36,7 @@ void Player::init(Texture *texture, Vector2<int> position, b2World *world) {
 	setPhysics(world, &fd, &tags, false, false);
 }
 
-bool Player::update() {
+bool Player::update(float deltaTime) {
     
 	//Movement test
 	b2Vec2 direction = b2Vec2(0,body->GetLinearVelocity().y);
@@ -50,7 +50,7 @@ bool Player::update() {
 	    direction.y = 20;
 	}
 	body->SetLinearVelocity(direction);
-	return PhysicEntity::update();
+	return PhysicEntity::update(deltaTime);
 }
 
 void Player::render(RenderWindow *window) {

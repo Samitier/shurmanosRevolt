@@ -9,7 +9,7 @@ public:
 	~Background(void);
 
 	void init(std::vector<Texture*>textures);
-	void update();
+	void update(float deltaTime);
 	void render(RenderWindow* window);
 
 private:

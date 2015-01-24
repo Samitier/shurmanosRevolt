@@ -23,9 +23,13 @@ void Game::init() {
 }
 
 void Game::mainLoop() {
+    Clock clock;
+    Time t = clock.getElapsedTime();
     while (window->isOpen()) {
+        float deltaTime = (clock.getElapsedTime() - t).asSeconds();
+        t = clock.getElapsedTime();
 		processInput();
-		update();
+		update(deltaTime);
 		render();
     }
 	finalize();
@@ -49,11 +53,11 @@ void Game::processInput() {
 	//inputs aqui
 }
 
-void Game::update() {
-	map.update();
-	player.update();
-	camera.update();
-	engine.update();
+void Game::update(float deltaTime) {
+	map.update(deltaTime);
+	player.update(deltaTime);
+	camera.update(deltaTime);
+	engine.update(deltaTime);
 }
 
 void Game::render() {

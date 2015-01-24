@@ -12,7 +12,7 @@ void Camera::init(RenderWindow* windw, PhysicEntity* playr) {
 	window->setView(view);
 }
 
-void Camera::update() {
+void Camera::update(float deltaTime) {
 	Vector2f center = player->getPosition();
 	center.y -= Y_OFFSET;
 	view.setCenter(center);

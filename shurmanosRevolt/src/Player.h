@@ -27,7 +27,7 @@ public:
 
 	//Basic operations
 	void init(Texture *texture, Vector2<int> position, b2World *world);
-	bool update();
+	bool update(float deltaTime);
 	void render(RenderWindow *window);
 	void destroy(b2World *world);
 

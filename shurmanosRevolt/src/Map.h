@@ -11,7 +11,7 @@ public:
 	~Map(void);
 
 	void init(TextureManager* textureManager, b2World* world);
-	void update();
+	void update(float deltaTime);
 	void render(RenderWindow* window);
 
 private:

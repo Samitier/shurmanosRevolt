@@ -30,7 +30,7 @@ void PhysicEntity::render(RenderWindow *window){
 	sprite.render(window);
 }
 
-bool PhysicEntity::update(){
+bool PhysicEntity::update(float deltaTime){
 	b2Vec2 pos = body->GetPosition();
 	sprite.setPosition(Utils::metersToPixels(pos));
 	float32 rotation = body->GetAngle();

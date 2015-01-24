@@ -12,7 +12,7 @@ void Background::init(std::vector<Texture*>textures) {
 }
 
 //this updante needs the player position, to move each layer. Before implementing this we need to decide the final units of the game
-void Background::update() {
+void Background::update(float deltaTime) {
 
 }
 

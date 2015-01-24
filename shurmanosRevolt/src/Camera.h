@@ -12,7 +12,7 @@ public:
 
 	//Basic operations
 	void init(RenderWindow* window, PhysicEntity* player);
-	void update();
+	void update(float deltaTime);
 
 private:
 	View view;

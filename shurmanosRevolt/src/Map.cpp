@@ -27,8 +27,8 @@ void Map::init(TextureManager *textureManager,  b2World* world) {
 
 }
 
-void Map::update() {
-	background.update();
+void Map::update(float deltaTime) {
+	background.update(deltaTime);
 }
 
 void Map::render(RenderWindow *window) {
