@@ -32,6 +32,10 @@ bool PhysicEntity::update(){
 	return false;
 }
 
+Vector2f PhysicEntity::getPosition(){
+	return sprite.getPosition();
+}
+
 void PhysicEntity::destroy(b2World *world) {
 	world -> DestroyBody(body);
 }

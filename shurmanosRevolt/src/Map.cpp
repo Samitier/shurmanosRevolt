@@ -6,16 +6,23 @@ Map::~Map(void){}
 
 void Map::init(TextureManager *textureManager,  b2World* world) {
 	//hardcoded example. In reality, there must be a "loadLevel" function that reads the level from a file.
-	//in reality this floor must be a fixed PhysicEntity, but since we still don't have textures, we leave it that way"
-	b2BodyDef groundBodyDef;
-	groundBodyDef.position.Set(Utils::pixelsToMeters(Vector2<int>(0, 580)).x, Utils::pixelsToMeters(Vector2<int>(0, 600)).y);
-	b2Body* groundBody = world->CreateBody(&groundBodyDef);
-	b2PolygonShape groundBox;
-	groundBox.SetAsBox(800/PIXELS_METER, 20/PIXELS_METER);
-	groundBody->CreateFixture(&groundBox, 0.0f);
+	floor.init(textureManager->getTexture(TextureManager::TEX_FLOOR),Vector2<int>(0,SCREEN_HEIGHT-(22/2)),Vector2<int>(2108,22));
+	b2PolygonShape shape;
+	float w =2108/PIXELS_METER;
+    float h = 22/PIXELS_METER;
+	shape.SetAsBox(w/2,h/2);
+	b2FixtureDef fixtureDef;
+	fixtureDef.shape = &shape;
+	fixtureDef.density = 1.0f;
+	fixtureDef.friction = 1.5f;
+	std::vector<b2FixtureDef*> fd;
+	fd.push_back(&fixtureDef);
+	floor.setPhysics(world,&fd,true,true);
 	
 	std::vector<Texture*> texturesBackground;
-	texturesBackground.push_back(textureManager->getTexture(TextureManager::TEX_BACKGROUND));
+	texturesBackground.push_back(textureManager->getTexture(TextureManager::TEX_BKG01));
+	texturesBackground.push_back(textureManager->getTexture(TextureManager::TEX_BKG02));
+	texturesBackground.push_back(textureManager->getTexture(TextureManager::TEX_BKG03));
 	background.init(texturesBackground);
 
 }
@@ -26,4 +33,5 @@ void Map::update() {
 
 void Map::render(RenderWindow *window) {
 	background.render(window);
+	floor.render(window);
 }

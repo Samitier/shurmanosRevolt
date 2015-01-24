@@ -9,7 +9,7 @@ void Player::init(Texture *texture, Vector2<int> position, b2World *world) {
     //TODO I think all this should be done elsewhere
     float w = (SPRITE_WIDTH-PADDING_RIGHT)/PIXELS_METER;
     float h = (SPRITE_HEIGHT-PADDING_BOTTOM)/PIXELS_METER;
-	shape.SetAsBox(w,h,b2Vec2(w/2,-h/2),0.0F); //The center has to be manually specified, otherwise it's (0,0)
+	shape.SetAsBox(w/2,h/2); //The center has to be manually specified, otherwise it's (0,0)
 	b2FixtureDef fixtureDef;
 	fixtureDef.shape = &shape;
 	fixtureDef.density = 1.0f;

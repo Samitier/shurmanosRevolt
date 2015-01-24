@@ -18,7 +18,8 @@ void Game::init() {
 	
 	map.init(&textureManager,engine.getWorld());
 
-	player.init(textureManager.getTexture(TextureManager::TEX_SPRITESHEET), Vector2<int>(400,0), engine.getWorld());
+	player.init(textureManager.getTexture(TextureManager::TEX_SPRITESHEET), Vector2<int>(200,0), engine.getWorld());
+	camera.init(window, &player);
 }
 
 void Game::mainLoop() {
@@ -51,6 +52,7 @@ void Game::processInput() {
 void Game::update() {
 	map.update();
 	player.update();
+	camera.update();
 	engine.update();
 }
 

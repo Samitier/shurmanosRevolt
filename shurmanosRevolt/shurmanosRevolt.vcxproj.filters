@@ -57,6 +57,9 @@
     <ClCompile Include="src\Background.cpp">
       <Filter>Archivos de código fuente\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\Camera.cpp">
+      <Filter>Archivos de código fuente\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Includes.h">
@@ -90,6 +93,9 @@
       <Filter>Archivos de encabezado\Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\Background.h">
+      <Filter>Archivos de encabezado\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Camera.h">
       <Filter>Archivos de encabezado\Engine</Filter>
     </ClInclude>
   </ItemGroup>

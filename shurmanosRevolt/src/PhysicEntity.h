@@ -17,6 +17,8 @@ public:
 	void render(RenderWindow *window);
 	void destroy(b2World *world);
 
+	Vector2f getPosition();
+
 	b2Body* body;
 private:
 	AnimatedSprite sprite;

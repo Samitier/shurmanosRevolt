@@ -6,6 +6,7 @@
 #include "Player.h" 
 #include "DebugDraw.h"
 #include "Map.h"
+#include "Camera.h"
 
 class Game {
 public:
@@ -29,6 +30,7 @@ private:
 
 	///only for testing
 	PhysicsEngine engine;
+	Camera camera;
 	Map map;
 	Player player;
 

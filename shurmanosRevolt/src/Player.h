@@ -2,15 +2,15 @@
 #include "Utils.h"
 #include "PhysicEntity.h"
 
-class Player:PhysicEntity {
+class Player:public PhysicEntity {
 
 public:
 	Player(void);
 	~Player(void);
 
 
-	static const int SPRITE_HEIGHT	=	95;
-	static const int SPRITE_WIDTH	=	125;
+	static const int SPRITE_HEIGHT	=	190;
+	static const int SPRITE_WIDTH	=	250;
 
 
 	static const int PADDING_LEFT	= 0;
