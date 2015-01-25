@@ -4,9 +4,10 @@
 Map::Map(void){}
 Map::~Map(void){}
 
-void Map::init(TextureManager *textureManager,  b2World* world) {
+void Map::init(TextureManager *textureManager,  b2World* world, Camera* cam) {
 	//hardcoded example. In reality, there must be a "loadLevel" function that reads the level from a file.
-	floor.init(textureManager->getTexture(TextureManager::TEX_FLOOR),Vector2<int>(0,SCREEN_HEIGHT-(22/2)),Vector2<int>(2108,22));
+	mapWidth = 2108; //the length of the floor
+	floor.init(textureManager->getTexture(TextureManager::TEX_FLOOR),Vector2<int>(2108/2,SCREEN_HEIGHT-(22/2)),Vector2<int>(2108,22));
 	b2PolygonShape shape;
 	float w =2108/PIXELS_METER;
     float h = 22/PIXELS_METER;
@@ -25,10 +26,11 @@ void Map::init(TextureManager *textureManager,  b2World* world) {
 	texturesBackground.push_back(textureManager->getTexture(TextureManager::TEX_BKG03));
 	background.init(texturesBackground);
 
+	camera = cam;
 }
 
 void Map::update() {
-	background.update();
+	background.update(camera, mapWidth);
 }
 
 void Map::render(RenderWindow *window) {

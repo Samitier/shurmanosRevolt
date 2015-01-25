@@ -15,11 +15,10 @@ void Game::init() {
     debugRender = false;
     
 	textureManager.init();
-	
-	map.init(&textureManager,engine.getWorld());
 
 	player.init(textureManager.getTexture(TextureManager::TEX_SPRITESHEET), Vector2<int>(200,0), engine.getWorld());
-	camera.init(window, &player);
+	map.init(&textureManager,engine.getWorld(), &camera);
+	camera.init(window, &player, map.getWidth());
 }
 
 void Game::mainLoop() {
@@ -50,9 +49,9 @@ void Game::processInput() {
 }
 
 void Game::update() {
-	map.update();
 	player.update();
 	camera.update();
+	map.update();
 	engine.update();
 }
 

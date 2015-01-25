@@ -28,9 +28,7 @@ void Player::init(Texture *texture, Vector2<int> position, b2World *world) {
     fixtureDef.isSensor = false;
     
 	std::vector<b2FixtureDef*> fd;
-    std::vector<ColliderTags> tags;
-	tags.push_back(PLAYER_BODY);
-	tags.push_back(PLAYER_FOOT);
+	std::vector<ColliderTags> tags = { PLAYER_FOOT, PLAYER_BODY };
     fd.push_back(&footSensorDef);
 	fd.push_back(&fixtureDef);
 	setPhysics(world, &fd, &tags, false, false);

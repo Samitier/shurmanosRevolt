@@ -2,6 +2,8 @@
 #include "Utils.h"
 #include "PhysicEntity.h"
 
+#define MAX_JUMP_TIME = 1.0f
+
 class Player:public PhysicEntity {
 
 public:
@@ -23,7 +25,6 @@ public:
 	static const int PADDING_TOP	= 0;
 	static const int PADDING_BOTTOM = 0;
     
-    static const int MAX_JUMP_TIME = 1;
 
 	//Basic operations
 	void init(Texture *texture, Vector2<int> position, b2World *world);
