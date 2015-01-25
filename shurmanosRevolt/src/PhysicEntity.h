@@ -19,7 +19,7 @@ public:
     void setPhysics(b2World *world, std::vector<b2FixtureDef*> *fixtureDef, bool fixedRotation, bool isStatic);
     
 	//updates physics and return true if the object is out of bounds or destroyed
-	bool update();
+	bool update(float deltaTime);
 	void render(RenderWindow *window);
 	void destroy(b2World *world);
 

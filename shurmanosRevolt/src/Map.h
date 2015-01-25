@@ -12,7 +12,7 @@ public:
 	~Map(void);
 
 	void init(TextureManager* textureManager, b2World* world, Camera* camera);
-	void update();
+	void update(float deltaTime);
 	void render(RenderWindow* window);
 
 	int getWidth() { return mapWidth; }

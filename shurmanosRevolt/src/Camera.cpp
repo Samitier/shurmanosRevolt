@@ -13,7 +13,7 @@ void Camera::init(RenderWindow* windw, PhysicEntity* playr, int limitx) {
 	window->setView(view);
 }
 
-void Camera::update() {
+void Camera::update(float deltaTime) {
 	Vector2f center = player->getPosition();
 	center.y -= Y_OFFSET;
 	if (center.x - SCREEN_WIDTH / 2 < 0) center.x = SCREEN_WIDTH / 2;

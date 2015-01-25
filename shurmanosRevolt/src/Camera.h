@@ -13,7 +13,7 @@ public:
 
 	//Basic operations
 	void init(RenderWindow* window, PhysicEntity* player, int limitX);
-	void update();
+	void update(float deltaTime);
 	Vector2f getCenter();
 
 private:

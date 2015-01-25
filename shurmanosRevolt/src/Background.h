@@ -10,7 +10,9 @@ public:
 	~Background(void);
 
 	void init(std::vector<Texture*>textures);
+	
 	void update(Camera *camera, int width);
+
 	void render(RenderWindow* window);
 
 private:

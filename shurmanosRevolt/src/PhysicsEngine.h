@@ -10,7 +10,7 @@ public:
 	~PhysicsEngine(void){}
 
 	//BASIC OPERATIONS:
-	void update();
+	void update(float deltaTime);
 	b2World* getWorld();
 
 private:
