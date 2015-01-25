@@ -9,6 +9,7 @@ public:
 	Camera(void);
 	~Camera(void);
 
+	//offset of the y axis for the camera
 	static const int Y_OFFSET = 125;
 
 	//Basic operations

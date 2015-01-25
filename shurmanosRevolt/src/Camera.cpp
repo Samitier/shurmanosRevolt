@@ -3,6 +3,7 @@
 Camera::Camera(void) {}
 Camera::~Camera(void){}
 
+//initialize a camera that follows the player playr. The x movement is limited by 0 and limitx
 void Camera::init(RenderWindow* windw, PhysicEntity* playr, int limitx) {
 	limitX = limitx;
 	window = windw;

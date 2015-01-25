@@ -4,6 +4,7 @@
 #include "PhysicEntity.h"
 #include "TextureManager.h"
 #include "Camera.h"
+#include"Building.h"
 
 class Map {
 
@@ -18,8 +19,12 @@ public:
 	int getWidth() { return mapWidth; }
 
 private:
-	Camera *camera;
-	Background background;
+	Camera *camera; //we need the camera for knowing when to render the objects and for scrolling the background
+	Background background; 
 	PhysicEntity floor;
-	int mapWidth;
+	//the building of the map
+	Building building;
+	//physicObjects of the map such as furniture, lightposts, and other details
+	std::vector<PhysicEntity> objects;
+	int mapWidth; //the total width of the map. A map always starts at x=0 and ends at x = width
 };

@@ -3,6 +3,8 @@
 Background::Background(void){}
 Background::~Background(void){}
 
+
+//the order of the textures is important. The first texture of the vector wil be the bottom layer and so on.
 void Background::init(std::vector<Texture*>textures) {
 	for (Texture* tex : textures){
        AnimatedSprite layer; 
@@ -12,6 +14,8 @@ void Background::init(std::vector<Texture*>textures) {
 	}
 }
 
+//this update gets the position of the camera relative to the total of the level (levelx) and moves every layer acording to their length 
+//(longer image=faster movement)
 void Background::update(Camera* camera, int width) {	
 	float levelx = ((camera->getCenter().x - SCREEN_WIDTH / 2) / (width - SCREEN_WIDTH));
 	for (AnimatedSprite &layer : layers) {
