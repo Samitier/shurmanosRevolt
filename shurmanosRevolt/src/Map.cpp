@@ -27,6 +27,12 @@ void Map::init(TextureManager *textureManager,  b2World* world, Camera* cam) {
 	background.init(texturesBackground);
 
 	camera = cam;
+
+	LevelParser parser;
+	parser.parseLevel("level0.json");
+	vector<int> facade = parser.getFacadeLayer();
+
+
 }
 
 void Map::update(float deltaTime) {

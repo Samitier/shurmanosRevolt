@@ -69,6 +69,9 @@
     <ClCompile Include="src\Room.cpp">
       <Filter>Archivos de código fuente\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\LevelParser.cpp">
+      <Filter>Archivos de código fuente\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Includes.h">
@@ -114,6 +117,9 @@
       <Filter>Archivos de encabezado\Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\Room.h">
+      <Filter>Archivos de encabezado\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LevelParser.h">
       <Filter>Archivos de encabezado\Engine</Filter>
     </ClInclude>
   </ItemGroup>

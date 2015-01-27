@@ -5,6 +5,7 @@
 #include "TextureManager.h"
 #include "Camera.h"
 #include"Building.h"
+#include "LevelParser.h"
 
 class Map {
 
