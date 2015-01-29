@@ -19,3 +19,18 @@ void ImageUtils::makeHole(Image* img, int x, int y, int r){
 		}
 	}
 }
+
+//this operation is very slow. Should not be used in real time, only when loading things.
+void ImageUtils::generateImageFromTiles(Image* img, Texture * tileset, const vector <vector <int> >& tiles, int tilesize) {
+	Image tilesetImg = tileset->copyToImage(); //loading the image from file would be faster (we need an image factory, where to put it?)
+	img->create(tiles[0].size()*tilesize, tiles.size()*tilesize, Color::Transparent);//we create a transparent image
+	int tilesetWidth = tilesetImg.getSize().x / tilesize;
+	for (int i = 0; i < tiles.size(); ++i) {
+		for (int j = 0; j < tiles[i].size(); ++j) {
+			if (tiles[i][j] == 0) continue;
+			int x = (tiles[i][j]-1) % tilesetWidth;
+			int y = (tiles[i][j]-1) / tilesetWidth;
+			img->copy(tilesetImg, j*tilesize, i*tilesize, IntRect(x*tilesize, y*tilesize, tilesize, tilesize), true);
+		}
+	}
+}

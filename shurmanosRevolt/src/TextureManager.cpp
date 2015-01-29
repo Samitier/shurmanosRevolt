@@ -12,6 +12,7 @@ void TextureManager::init() {
 	texture[TEX_BKG02].loadFromFile("res/img/bkg02.png");
 	texture[TEX_BKG03].loadFromFile("res/img/bkg03.png");
 	texture[TEX_FLOOR].loadFromFile("res/img/floor.png");
+	texture[TEX_TILESET].loadFromFile("res/img/tileset.png");
 }
 
 Texture * TextureManager::getTexture(int id) {

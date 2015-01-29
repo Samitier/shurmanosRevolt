@@ -8,5 +8,5 @@ public:
 
 	//makes a hole of radius r in the image img on position x,y
 	static void makeHole(Image* img, int x, int y, int r);
-
+	static void generateImageFromTiles(Image* img, Texture * tileset, const vector <vector <int> >& tiles, int tilesize);
 };

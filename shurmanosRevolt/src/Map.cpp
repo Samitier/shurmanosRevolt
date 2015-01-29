@@ -28,10 +28,10 @@ void Map::init(TextureManager *textureManager,  b2World* world, Camera* cam) {
 
 	camera = cam;
 
+	//here begins 'the true level loader'. The width and the tiles of the floor must be retrieved from here too, not hardcoded like avobe
 	LevelParser parser;
 	parser.parseLevel("level0.json");
-	vector<int> facade = parser.getFacadeLayer();
-
+	building.init(textureManager->getTexture(TextureManager::TEX_TILESET), parser.getTileSize(), parser.getFacadeLayer(), parser.getInteriorLayer());
 
 }
 
@@ -41,5 +41,6 @@ void Map::update(float deltaTime) {
 
 void Map::render(RenderWindow *window) {
 	background.render(window);
+	building.render(window);
 	floor.render(window);
 }

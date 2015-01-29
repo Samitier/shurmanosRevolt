@@ -5,3 +5,4 @@
 #include <Box2D/Box2D.h>
 
 using namespace sf;
+using namespace std;

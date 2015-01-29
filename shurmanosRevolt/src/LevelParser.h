@@ -16,9 +16,10 @@ public:
 
 	void parseLevel(string name);
 
-	vector<int> getFacadeLayer();
-	vector<int> getInteriorLayer();
-	vector<int> getObjectLayer();
+	vector< vector<int> > getFacadeLayer();
+	vector< vector<int> > getInteriorLayer();
+	vector< vector<int> > getObjectLayer();
+	int getTileSize();
 
 private:
 	Value level;
