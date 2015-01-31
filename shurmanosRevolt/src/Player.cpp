@@ -31,7 +31,7 @@ void Player::init(Texture *texture, Vector2<int> position, b2World *world) {
 	std::vector<ColliderTags> tags = { PLAYER_FOOT, PLAYER_BODY };
     fd.push_back(&footSensorDef);
 	fd.push_back(&fixtureDef);
-	setPhysics(world, &fd, &tags, false, false);
+	setPhysics(world, &fd, &tags, true, false);
 }
 
 bool Player::update(float deltaTime) {

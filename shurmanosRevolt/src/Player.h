@@ -16,8 +16,8 @@ public:
 	~Player(void);
 
 
-	static const int SPRITE_HEIGHT	=	95;
-	static const int SPRITE_WIDTH	=	125;
+	static const int SPRITE_HEIGHT	=	45;
+	static const int SPRITE_WIDTH	=	25;
 
 
 	static const int PADDING_LEFT	= 0;

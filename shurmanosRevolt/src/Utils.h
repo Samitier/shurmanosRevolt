@@ -1,5 +1,6 @@
 #pragma once
 #include "Includes.h"
+#include <iostream>
 
 #define SCREEN_WIDTH	800
 #define SCREEN_HEIGHT	600
@@ -33,4 +34,13 @@ class Utils {
         //TODO quick hack to avoid duplicating code, this needs fixing
         return pixelsToMeters(Vector2<int> (i,0)).x;
     }
+    
+    static void debLog(string s) {
+       std::cout << "[DEBUG]" << s << ". From file " << __FILE__ << " at line " << __LINE__ << endl;  
+    }
+    
+    static void errLog(string s) {
+       std::cout << "[ERROR]" << s << ". From file " << __FILE__ << " at line " << __LINE__ << endl;  
+    }
+    
 };

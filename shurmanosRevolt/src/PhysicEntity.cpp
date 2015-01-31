@@ -14,6 +14,7 @@ void PhysicEntity::setPhysics(b2World *world, std::vector<b2FixtureDef*> *fixtur
 	bodyDef.fixedRotation = fixedRotation;
 	b2Vec2 pos = Utils::pixelsToMeters(Vector2<int>(sprite.getPosition().x, sprite.getPosition().y));
 	bodyDef.position.Set(pos.x, pos.y);
+    //TODO: This line sometimes throws segmentation faults 
 	body = world->CreateBody(&bodyDef);
 	for(int i=0; i<fixtureDef->size();++i) {
         b2Fixture* fixture = body->CreateFixture((*fixtureDef)[i]);
