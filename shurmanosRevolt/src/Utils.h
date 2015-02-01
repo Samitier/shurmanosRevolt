@@ -6,10 +6,15 @@
 #define SCREEN_HEIGHT	600
 #define PIXELS_METER	20.0
 
+//Useful macros
+#define debLog(s) std::cout<<"[DEBUG]"<<s<<". From file "<<__FILE__<<" at line "<< __LINE__<<endl;  
+#define errLog(s) std::cerr<<"[ERROR]"<<s<<". From file "<<__FILE__<<" at line "<< __LINE__<<endl;  
+    
 class Utils {
 	public:
 		Utils(void){}
 		~Utils(void){}
+		
 
 	static b2Vec2 pixelsToMeters(Vector2<int> v) {
 		b2Vec2 vect;
@@ -35,12 +40,5 @@ class Utils {
         return pixelsToMeters(Vector2<int> (i,0)).x;
     }
     
-    static void debLog(string s) {
-       std::cout << "[DEBUG]" << s << ". From file " << __FILE__ << " at line " << __LINE__ << endl;  
-    }
-    
-    static void errLog(string s) {
-       std::cout << "[ERROR]" << s << ". From file " << __FILE__ << " at line " << __LINE__ << endl;  
-    }
     
 };
