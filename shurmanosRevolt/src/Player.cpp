@@ -38,17 +38,20 @@ void Player::init(Texture *texture, Vector2<int> position, b2World *world) {
 }
 
 bool Player::update(float deltaTime) {
+   
+    if(!isGrounded()) midairTime += deltaTime;
+    if(!isGrounded() && !KEYPRESSED(Space)) midairTime += 0.5;
     
 	//Movement test
 	b2Vec2 direction = b2Vec2(0,body->GetLinearVelocity().y);
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
-	    direction.x = -20;
+	if(KEYPRESSED(Left)) {
+	    direction.x = -10;
 	}
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right)) {
-	    direction.x = 20;
+	if(KEYPRESSED(Right)) {
+	    direction.x = 10;
 	}
-	if(sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-	    direction.y = 20;
+	if((isGrounded() || midairTime < 0.5) && KEYPRESSED(Space)) {
+	    direction.y = 5;
 	}
 	body->SetLinearVelocity(direction);
 	return PhysicEntity::update(deltaTime);
@@ -62,6 +65,15 @@ void Player::destroy(b2World *world) {
 	PhysicEntity::destroy(world);
 }
 
-void Player::onCollision(b2Body otherBody, CollisionData* otherData) {
-    
+void Player::onCollisionBegin(CollisionData* thisData, CollisionData* otherData) {
+    if(thisData->tag == ColliderTags::PLAYER_FOOT) {
+        ++numContactsFloor;
+        //TODO: numContactsFloor should always be positive 
+        //for this to work. I should check that.
+        midairTime = 0;
+    }
+}
+
+void Player::onCollisionEnd(CollisionData* thisData, CollisionData* otherData) {
+    if(thisData->tag == ColliderTags::PLAYER_FOOT) --numContactsFloor;
 }

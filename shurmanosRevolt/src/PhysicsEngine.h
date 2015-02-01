@@ -1,5 +1,6 @@
 #pragma once
 #include "Utils.h"
+#include "ContactListener.h"
 
 class PhysicsEngine {
 
@@ -15,4 +16,5 @@ public:
 
 private:
 	b2World world;
+    ContactListener contactListener;
 };

@@ -31,12 +31,14 @@ public:
 	bool update(float deltaTime);
 	void render(RenderWindow *window);
 	void destroy(b2World *world);
-    virtual void onCollision(b2Body otherBody, CollisionData* otherData) override;
+    bool isGrounded() {return numContactsFloor > 0;}
+    virtual void onCollisionBegin(CollisionData* thisData, CollisionData* otherData) override;
+    virtual void onCollisionEnd(CollisionData* thisData, CollisionData* otherData) override;
 
 private:
 
-    bool grounded;
-    float midairTime;
+    int numContactsFloor = 0;
+    float midairTime = 0;
     CollisionData bodyData, footData;
 
 };

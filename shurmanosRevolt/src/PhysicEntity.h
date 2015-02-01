@@ -27,7 +27,8 @@ public:
     /**Called when a collision with other physicsEntity happens. 
         Every PhyisicEntity should override this method to handle collisions.
         TODO: Collision masks?*/
-    virtual void onCollision(b2Body otherBody, CollisionData* otherData) {};
+    virtual void onCollisionBegin(CollisionData* thisData, CollisionData* otherData) {};
+    virtual void onCollisionEnd(CollisionData* thisData, CollisionData* otherData) {};
 
 	Vector2f getPosition();
 

@@ -2,7 +2,7 @@
 
 
 Map::Map(void)
-    : groundData((PhysicEntity*)this, ColliderTags::COLLIDER_DEFAULT) {}
+    : groundData(&floor, ColliderTags::COLLIDER_DEFAULT) {}
 Map::~Map(void){}
 
 void Map::init(TextureManager *textureManager,  b2World* world, Camera* cam) {

@@ -9,6 +9,7 @@
 //Useful macros
 #define debLog(s) std::cout<<"[DEBUG]"<<s<<". From file "<<__FILE__<<" at line "<< __LINE__<<endl;  
 #define errLog(s) std::cerr<<"[ERROR]"<<s<<". From file "<<__FILE__<<" at line "<< __LINE__<<endl;  
+#define KEYPRESSED(key) sf::Keyboard::isKeyPressed(sf::Keyboard::key) 
     
 class Utils {
 	public:
