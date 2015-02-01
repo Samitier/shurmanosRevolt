@@ -9,7 +9,7 @@ Player::~Player(void){}
 
 
 
-void Player::init(Texture *texture, Vector2<int> position, b2World *world) {
+void Player::init(Texture* texture, Texture* armtex, Vector2<int> position, b2World *world) {
 	PhysicEntity::init(texture, position, Vector2<int>(SPRITE_WIDTH, SPRITE_HEIGHT));
     float w = (SPRITE_WIDTH-PADDING_RIGHT)/PIXELS_METER;
     float h = (SPRITE_HEIGHT-PADDING_BOTTOM)/PIXELS_METER;
@@ -20,7 +20,6 @@ void Player::init(Texture *texture, Vector2<int> position, b2World *world) {
     footSensorDef.shape = &footSensor;
     footSensorDef.isSensor = true;
     footSensorDef.density = 50;
-    
     
     b2PolygonShape shape;
     shape.SetAsBox(w,h,b2Vec2(w/2,-h/2),0.0F); //The center has to be manually specified, otherwise it's (0,0)
@@ -35,10 +34,12 @@ void Player::init(Texture *texture, Vector2<int> position, b2World *world) {
     fd.push_back(&footSensorDef);
 	fd.push_back(&fixtureDef);
 	setPhysics(world, fd, tags, true, false);
+    
+    arm.init(armtex, position, Vector2<int>(18,34),Vector2<int>(0,0));
 }
 
 bool Player::update(float deltaTime) {
-   
+    
     if(!isGrounded()) midairTime += deltaTime;
     if(!isGrounded() && !KEYPRESSED(Space)) midairTime += 0.5;
     
@@ -58,7 +59,16 @@ bool Player::update(float deltaTime) {
 }
 
 void Player::render(RenderWindow *window) {
+    //Trigonometria! yay!
+    static float rotation = 0;
+    Vector2i m = sf::Mouse::getPosition(*window);
+    Vector2f p = Vector2f(window->getSize().x/2, window->getSize().y/2);
+    rotation = atan2(m.y-p.y,m.x-p.x)*57.29-90;
+    arm.setRotation(rotation);
+    
+    arm.setPosition(getPosition()+Vector2f(19,7));
 	PhysicEntity::render(window);
+    arm.render(window);
 }
 
 void Player::destroy(b2World *world) {

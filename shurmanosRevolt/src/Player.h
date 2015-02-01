@@ -27,7 +27,7 @@ public:
     
 
 	//Basic operations
-	void init(Texture *texture, Vector2<int> position, b2World *world);
+	void init(Texture *texture, Texture* arm, Vector2<int> position, b2World *world);
 	bool update(float deltaTime);
 	void render(RenderWindow *window);
 	void destroy(b2World *world);
@@ -40,6 +40,7 @@ private:
     int numContactsFloor = 0;
     float midairTime = 0;
     CollisionData bodyData, footData;
+    AnimatedSprite arm;
 
 };
 

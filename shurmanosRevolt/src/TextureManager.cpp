@@ -14,6 +14,7 @@ void TextureManager::init() {
 	texture[TEX_FLOOR].loadFromFile("res/img/floor.png");
 	texture[TEX_TILESET].loadFromFile("res/img/tileset.png");
     texture[TEX_PROTA].loadFromFile("res/img/prota_provisional.png");
+    texture[TEX_ARM].loadFromFile("res/img/prota_arm_provisional.png");
 }
 
 Texture * TextureManager::getTexture(int id) {

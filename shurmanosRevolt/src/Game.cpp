@@ -16,7 +16,9 @@ void Game::init() {
     
 	textureManager.init();
 
-	player.init(textureManager.getTexture(TextureManager::TEX_PROTA), Vector2<int>(200,0), engine.getWorld());
+	player.init(textureManager.getTexture(TextureManager::TEX_PROTA), 
+                textureManager.getTexture(TextureManager::TEX_ARM), 
+                Vector2<int>(200,0), engine.getWorld());
 	map.init(&textureManager,engine.getWorld(), &camera);
 	camera.init(window, &player, map.getWidth());
 }
