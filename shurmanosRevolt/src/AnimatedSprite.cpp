@@ -5,12 +5,12 @@ AnimatedSprite::AnimatedSprite(void) {}
 AnimatedSprite::~AnimatedSprite(void) {}
 
 
-void AnimatedSprite::init(Texture *texture, Vector2<int> position, Vector2<int> size) {
+void AnimatedSprite::init(Texture *texture, Vector2<int> position, Vector2<int> size, Vector2<int> center) {
 	width = size.x;
 	height = size.y;
 	sprite.setTexture(*texture);
 	sprite.setPosition(position.x,position.y);
-	sprite.setOrigin(size.x/2, size.y/2);
+	sprite.setOrigin(center.x, center.y);
 	frame = delay = 0;
 }
 

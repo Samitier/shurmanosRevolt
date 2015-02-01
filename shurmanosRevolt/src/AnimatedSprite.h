@@ -16,7 +16,13 @@ public:
 	static const int FRAME_DELAY	=	4;
 
 	//BASIC OPERATIONS:
-	void init(Texture *texture, Vector2<int> position, Vector2<int> size);
+	inline void init(Texture *texture, Vector2<int> position, Vector2<int> size) {
+        init(texture, position, size, Vector2<int>(size.x/2, size.y/2));
+    }
+    
+    void init(Texture *texture, Vector2<int> position, Vector2<int> size, 
+              Vector2<int> center);
+    
 	void render(RenderWindow *window);
 
 	sf::Vector2f getPosition();
