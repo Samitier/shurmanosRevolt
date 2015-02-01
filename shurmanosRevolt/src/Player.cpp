@@ -61,8 +61,14 @@ bool Player::update(float deltaTime) {
 void Player::render(RenderWindow *window) {
     //Trigonometria! yay!
     static float rotation = 0;
-    Vector2i m = sf::Mouse::getPosition(*window);
-    Vector2f p = Vector2f(window->getSize().x/2, window->getSize().y/2);
+    Vector2f c = window->getView().getCenter() - 0.5f*window->getView().getSize();
+    Vector2f m = Vector2f(c.x+sf::Mouse::getPosition(*window).x,
+                          c.y+sf::Mouse::getPosition(*window).y);
+    Vector2f p = Vector2f(c.x+412,c.y+436);
+    cout << m.x << " " << m.y << " | " << p.y << " " << p.y << endl;
+    sf::Vertex line[] = {m,p};
+    window->draw(line, 2, sf::Lines);
+    
     rotation = atan2(m.y-p.y,m.x-p.x)*57.29-90;
     arm.setRotation(rotation);
     
