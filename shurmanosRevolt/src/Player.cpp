@@ -1,6 +1,9 @@
 #include "Player.h"
 
-Player::Player(void){}
+Player::Player(void) 
+    : bodyData((PhysicEntity*)this, ColliderTags::PLAYER_BODY),
+      footData ((PhysicEntity*)this, ColliderTags::PLAYER_FOOT) {}
+      
 Player::~Player(void){}
 
 
@@ -28,10 +31,10 @@ void Player::init(Texture *texture, Vector2<int> position, b2World *world) {
     fixtureDef.isSensor = false;
     
 	std::vector<b2FixtureDef*> fd;
-	std::vector<ColliderTags> tags = { PLAYER_FOOT, PLAYER_BODY };
+	std::vector<CollisionData*> tags = {&footData, &bodyData};
     fd.push_back(&footSensorDef);
 	fd.push_back(&fixtureDef);
-	setPhysics(world, &fd, &tags, true, false);
+	setPhysics(world, fd, tags, true, false);
 }
 
 bool Player::update(float deltaTime) {
@@ -57,4 +60,8 @@ void Player::render(RenderWindow *window) {
 
 void Player::destroy(b2World *world) {
 	PhysicEntity::destroy(world);
+}
+
+void Player::onCollision(b2Body otherBody, CollisionData* otherData) {
+    
 }

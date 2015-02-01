@@ -4,7 +4,7 @@
 
 #define MAX_JUMP_TIME = 1.0f
 
-class Player:public PhysicEntity {
+class Player : public PhysicEntity {
 
 public:
     
@@ -31,11 +31,13 @@ public:
 	bool update(float deltaTime);
 	void render(RenderWindow *window);
 	void destroy(b2World *world);
+    virtual void onCollision(b2Body otherBody, CollisionData* otherData) override;
 
 private:
 
     bool grounded;
     float midairTime;
+    CollisionData bodyData, footData;
 
 };
 

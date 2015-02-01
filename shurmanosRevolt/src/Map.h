@@ -6,6 +6,7 @@
 #include "Camera.h"
 #include"Building.h"
 #include "LevelParser.h"
+#include "CollisionData.h"
 
 class Map {
 
@@ -28,4 +29,6 @@ private:
 	//physicObjects of the map such as furniture, lightposts, and other details
 	std::vector<PhysicEntity> objects;
 	int mapWidth; //the total width of the map. A map always starts at x=0 and ends at x = width
+	
+	CollisionData groundData;
 };

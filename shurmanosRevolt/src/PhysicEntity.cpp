@@ -7,8 +7,8 @@ void PhysicEntity::init(Texture *tex, Vector2<int> pos, Vector2<int> siz){
 	sprite.init(tex,pos,siz);
 }
 
-void PhysicEntity::setPhysics(b2World *world, std::vector<b2FixtureDef*> *fixtureDef, std::vector<ColliderTags>* tags, 
-                              bool fixedRotation, bool isStatic){
+void PhysicEntity::setPhysics(b2World *world, const std::vector<b2FixtureDef*>& fixtureDef, 
+                              const std::vector<CollisionData*>& userData, bool fixedRotation, bool isStatic){
 	b2BodyDef bodyDef;
 	if(!isStatic) bodyDef.type = b2_dynamicBody;
 	bodyDef.fixedRotation = fixedRotation;
@@ -16,15 +16,10 @@ void PhysicEntity::setPhysics(b2World *world, std::vector<b2FixtureDef*> *fixtur
 	bodyDef.position.Set(pos.x, pos.y);
     //TODO: This line sometimes throws segmentation faults 
 	body = world->CreateBody(&bodyDef);
-	for(int i=0; i<fixtureDef->size();++i) {
-        b2Fixture* fixture = body->CreateFixture((*fixtureDef)[i]);
-        fixture->SetUserData((void*)((*tags)[i])); //Polymorphism at its finest
+	for(int i=0; i<fixtureDef.size();++i) {
+        b2Fixture* fixture = body->CreateFixture(fixtureDef[i]);
+        fixture->SetUserData((void*)(userData[i])); //Polymorphism at its finest
     }
-}
-
-void PhysicEntity::setPhysics(b2World *world, std::vector<b2FixtureDef*> *fixtureDef, bool fixedRotation, bool isStatic){
-    std::vector<ColliderTags> v (fixtureDef->size(), COLLIDER_DEFAULT);
-    setPhysics(world, fixtureDef, &v, fixedRotation, isStatic);
 }
 
 void PhysicEntity::render(RenderWindow *window){

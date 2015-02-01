@@ -1,7 +1,8 @@
 #include "Map.h"
 
 
-Map::Map(void){}
+Map::Map(void)
+    : groundData((PhysicEntity*)this, ColliderTags::COLLIDER_DEFAULT) {}
 Map::~Map(void){}
 
 void Map::init(TextureManager *textureManager,  b2World* world, Camera* cam) {
@@ -18,7 +19,8 @@ void Map::init(TextureManager *textureManager,  b2World* world, Camera* cam) {
 	fixtureDef.friction = 1.5f;
 	std::vector<b2FixtureDef*> fd;
 	fd.push_back(&fixtureDef);
-	floor.setPhysics(world,&fd,true,true);
+    std::vector<CollisionData*> data = {&groundData};
+	floor.setPhysics(world,fd,data,true,true);
 	
 	std::vector<Texture*> texturesBackground;
 	texturesBackground.push_back(textureManager->getTexture(TextureManager::TEX_BKG01));
