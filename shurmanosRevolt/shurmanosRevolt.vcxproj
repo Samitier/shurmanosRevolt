@@ -52,12 +52,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>SFML_STATIC;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Samitier\Documents\GitHub\shurmanosRevolt\shurmanosRevolt\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\xavier\Documents\GitHub\shurmanosRevolt\shurmanosRevolt\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Samitier\Documents\GitHub\shurmanosRevolt\shurmanosRevolt\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\xavier\Documents\GitHub\shurmanosRevolt\shurmanosRevolt\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew.lib;freetype.lib;jpeg.lib;opengl32.lib;glu32.lib;winmm.lib;sndfile.lib;openal32.lib;sfml-main-d.lib;sfml-system-s-d.lib;sfml-audio-s-d.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;Box2D-d.lib;lib_json-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -70,14 +70,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>SFML_STATIC;WIN32;NDEBUG;_CONSOLE</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Samitier\Documents\GitHub\shurmanosRevolt\shurmanosRevolt\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\xavier\Documents\GitHub\shurmanosRevolt\shurmanosRevolt\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\Users\Samitier\Documents\GitHub\shurmanosRevolt\shurmanosRevolt\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\xavier\Documents\GitHub\shurmanosRevolt\shurmanosRevolt\libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>glew.lib;freetype.lib;jpeg.lib;opengl32.lib;gdi32.lib;winmm.lib;sndfile.lib;openal32.lib;sfml-main.lib;sfml-system-s.lib;sfml-audio-s.lib;sfml-graphics-s.lib;sfml-window-s.lib;Box2D.lib;lib_json.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
