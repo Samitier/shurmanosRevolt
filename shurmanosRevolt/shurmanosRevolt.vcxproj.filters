@@ -72,6 +72,12 @@
     <ClCompile Include="src\LevelParser.cpp">
       <Filter>Archivos de código fuente\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\ContactListener.cpp">
+      <Filter>Archivos de código fuente\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Wall.cpp">
+      <Filter>Archivos de código fuente\Assets</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Includes.h">
@@ -121,6 +127,15 @@
     </ClInclude>
     <ClInclude Include="src\LevelParser.h">
       <Filter>Archivos de encabezado\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ContactListener.h">
+      <Filter>Archivos de encabezado\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CollisionData.h">
+      <Filter>Archivos de encabezado\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Wall.h">
+      <Filter>Archivos de encabezado\Assets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

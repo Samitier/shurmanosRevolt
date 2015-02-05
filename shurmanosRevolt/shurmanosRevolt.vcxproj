@@ -86,6 +86,7 @@
     <ClCompile Include="src\Background.cpp" />
     <ClCompile Include="src\Building.cpp" />
     <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\ContactListener.cpp" />
     <ClCompile Include="src\DebugDraw.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\ImageUtils.cpp" />
@@ -97,12 +98,15 @@
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Room.cpp" />
     <ClCompile Include="src\TextureManager.cpp" />
+    <ClCompile Include="src\Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AnimatedSprite.h" />
     <ClInclude Include="src\Background.h" />
     <ClInclude Include="src\Building.h" />
     <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\CollisionData.h" />
+    <ClInclude Include="src\ContactListener.h" />
     <ClInclude Include="src\DebugDraw.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\ImageUtils.h" />
@@ -115,6 +119,7 @@
     <ClInclude Include="src\PhysicEntity.h" />
     <ClInclude Include="src\PhysicsEngine.h" />
     <ClInclude Include="src\TextureManager.h" />
+    <ClInclude Include="src\Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\img\bkg.png" />

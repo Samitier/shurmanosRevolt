@@ -1,12 +1,16 @@
 #include "Utils.h"
 #include "PhysicEntity.h"
+#include "Wall.h"
 
 class Room {
 public:
 	Room(void);
 	~Room(void);
 
-	void init();
+	static const int WALL_WIDTH = 6;
+
+
+	void init(Texture * front, b2World* world, Texture* back, IntRect coords);
 	void update(float detaTime);
 	void render(RenderWindow* window);
 
@@ -15,6 +19,6 @@ private:
 	Sprite frontWall;
 	Sprite backWall;
 
-	//the 4 walls that create a room
-	std::vector<PhysicEntity> walls;
+	//the walls that create a room
+	vector<Wall> walls;
 };

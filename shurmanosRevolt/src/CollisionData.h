@@ -7,7 +7,7 @@ class PhysicEntity;
 
 namespace Collision {
      enum ColliderTags {
-        COLLIDER_DEFAULT, PLAYER_BODY, PLAYER_FOOT
+        COLLIDER_DEFAULT, PLAYER_BODY, PLAYER_FOOT, WALL
     };   
 }
 
