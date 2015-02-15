@@ -29,6 +29,7 @@ public:
 	void setRotation(float angle);
 	void setPosition(Vector2f position);
 	Vector2<int> getSize() { return Vector2<int>(width, height); }
+	float getRotation() { return sprite.getRotation(); }
 	//ANIMATION OPERATIONS:
 	//nextFrame() calculates the actual frame and must be called once per render (if there is an animation running).
 	//getFrame calculates the actual frame of the animation

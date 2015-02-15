@@ -16,6 +16,8 @@ public:
 	void render(RenderWindow *window);
 	void destroy(b2World *world);
 
+	Vector2f getPosition() { return PhysicEntity::getPosition(); }
+	float getRotation() { return PhysicEntity::getRotation(); }
 	virtual void onCollisionBegin(CollisionData* thisData, CollisionData* otherData) override;
 	virtual void onCollisionEnd(CollisionData* thisData, CollisionData* otherData) override;
 

@@ -48,6 +48,10 @@ Vector2f PhysicEntity::getPosition(){
 	return sprite.getPosition();
 }
 
+float PhysicEntity::getRotation(){
+	return sprite.getRotation();
+}
+
 void PhysicEntity::destroy(b2World *world) {
 	world -> DestroyBody(body);
 }

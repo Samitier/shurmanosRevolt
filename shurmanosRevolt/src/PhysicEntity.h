@@ -34,6 +34,7 @@ public:
     virtual void onCollisionEnd(CollisionData* thisData, CollisionData* otherData) {};
 
 	Vector2f getPosition();
+	float getRotation();
 
 	b2Body* body;
 private:

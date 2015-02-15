@@ -7,7 +7,7 @@ public:
 	Room(void);
 	~Room(void);
 
-	static const int WALL_WIDTH = 6;
+	static const int WALL_WIDTH = 8;
 
 
 	void init(Texture * front, b2World* world, Texture* back, IntRect coords);

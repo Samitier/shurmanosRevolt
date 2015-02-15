@@ -51,7 +51,7 @@ void Building::update(float deltaTime){
 }
 
 void Building::render(RenderWindow* window){
-	window->draw(sprite);
+	//window->draw(sprite);
 	for (Room &room : rooms) {
 		room.render(window);
 	}
