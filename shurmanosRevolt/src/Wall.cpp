@@ -7,9 +7,10 @@ Wall::~Wall(void){}
 
 void Wall::init (Texture *texture, Vector2<int> position, Vector2<int> size, b2World *world) {
 	PhysicEntity::init(texture, position, size);
-
+	float w = size.x / PIXELS_METER;
+	float h = size.y / PIXELS_METER;
 	b2PolygonShape shape;
-	shape.SetAsBox(size.x, size.y, b2Vec2(size.x / 2, -size.y/ 2), 0.0F); 
+	shape.SetAsBox(w, h, b2Vec2(w / 2, -h/ 2), 0.0F); 
 	b2FixtureDef fixtureDef;
 	fixtureDef.shape = &shape;
 	fixtureDef.density = 30.0f;
@@ -17,8 +18,10 @@ void Wall::init (Texture *texture, Vector2<int> position, Vector2<int> size, b2W
 	setPhysics(world, { &fixtureDef }, { &data }, false, false);
 }
 
-void Wall::update(float deltaTime) {
-	PhysicEntity::update(deltaTime);
+bool Wall::update(float deltaTime) {
+	data.entity = (PhysicEntity*)this;
+	PhysicEntity::updateCollisionData({ &data });
+	return PhysicEntity::update(deltaTime);
 }
 
 void Wall::render(RenderWindow *window) {

@@ -36,6 +36,14 @@ bool PhysicEntity::update(float deltaTime){
 	return false;
 }
 
+void PhysicEntity::updateCollisionData (const std::vector<CollisionData*>& userData) {
+	int i = 0;
+	for (b2Fixture* f = body->GetFixtureList(); f; f = f->GetNext()) {
+		f->SetUserData(userData[i]);
+		++i;
+	}
+}
+
 Vector2f PhysicEntity::getPosition(){
 	return sprite.getPosition();
 }

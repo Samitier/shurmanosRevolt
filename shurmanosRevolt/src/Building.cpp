@@ -44,6 +44,12 @@ void Building::getRooms(int tilesize, b2World* world, const vector< vector<int> 
 	}
 }
 
+void Building::update(float deltaTime){
+	for (Room &room : rooms) {
+		room.update(deltaTime);
+	}
+}
+
 void Building::render(RenderWindow* window){
 	//window->draw(sprite);
 	for (Room &room : rooms) {

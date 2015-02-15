@@ -22,6 +22,9 @@ public:
     //draw this entity to the screen
 	void render(RenderWindow *window);
     
+	void updateCollisionData(const std::vector<CollisionData*>& userData);
+
+
 	void destroy(b2World *world);
     
     /**Called when a collision with other physicsEntity happens. 

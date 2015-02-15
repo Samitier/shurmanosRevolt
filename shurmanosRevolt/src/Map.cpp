@@ -39,6 +39,7 @@ void Map::init(TextureManager *textureManager,  b2World* world, Camera* cam) {
 
 void Map::update(float deltaTime) {
 	background.update(camera, mapWidth);
+	building.update(deltaTime);
 }
 
 void Map::render(RenderWindow *window) {
