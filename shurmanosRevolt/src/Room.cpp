@@ -32,10 +32,11 @@ void Room::update(float deltaTime) {
 }
 
 void Room::render(RenderWindow* window) {
-	window->draw(frontWall);
-	for (Wall &wall : walls) {
-		wall.render(window);
-	}
 	window->draw(backWall);
+	/*for (Wall &wall : walls) {
+		wall.render(window);
+	}*/
+	window->draw(frontWall);
+
 	
 }

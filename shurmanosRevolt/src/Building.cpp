@@ -27,7 +27,7 @@ void Building::getRooms(int tilesize, b2World* world, const vector< vector<int> 
 			if (tiles[i][j] == 0) continue;
 			else if (tiles[i][j] == LEFT_WALL_TILE) {
 				isRoom = true;
-				ypos = i * tilesize;
+				ypos = i*tilesize;
 				xpos = j*tilesize;
 				width += tilesize;
 			}
@@ -51,7 +51,7 @@ void Building::update(float deltaTime){
 }
 
 void Building::render(RenderWindow* window){
-	//window->draw(sprite);
+	window->draw(sprite);
 	for (Room &room : rooms) {
 		room.render(window);
 	}

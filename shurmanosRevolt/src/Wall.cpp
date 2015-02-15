@@ -10,7 +10,7 @@ void Wall::init (Texture *texture, Vector2<int> position, Vector2<int> size, b2W
 	float w = size.x / PIXELS_METER;
 	float h = size.y / PIXELS_METER;
 	b2PolygonShape shape;
-	shape.SetAsBox(w, h, b2Vec2(w / 2, -h/ 2), 0.0F); 
+	shape.SetAsBox(w/2, h/2, b2Vec2(w / 2, -h/ 2), 0.0F); 
 	b2FixtureDef fixtureDef;
 	fixtureDef.shape = &shape;
 	fixtureDef.density = 30.0f;

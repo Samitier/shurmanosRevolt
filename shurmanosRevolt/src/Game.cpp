@@ -12,7 +12,7 @@ void Game::init() {
     //For now the physics engine doesn't know about the debug drawer.
     engine.getWorld()->SetDebugDraw(new DebugDraw(window));
     
-    debugRender = false;
+    debugRender = true;
     
 	textureManager.init();
 
