@@ -20,7 +20,7 @@ src/%.cpp: src/%.h
 
 obj/%.o: src/%.cpp
 	@echo Compiling $< into $@
-	$(CXX) $(CXX_FLAGS) -I/usr/include -c $< -o $@
+	$(CXX) $(CXX_FLAGS) -I/usr/include -I/usr/include/jsoncpp -c $< -o $@
 	
 clean: 
 	rm obj/*.o bin/main.x
