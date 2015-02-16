@@ -64,12 +64,12 @@ void Player::render(RenderWindow *window) {
     Vector2f c = window->getView().getCenter() - 0.5f*window->getView().getSize();
     Vector2f m = Vector2f(c.x+sf::Mouse::getPosition(*window).x,
                           c.y+sf::Mouse::getPosition(*window).y);
-    Vector2f p = Vector2f(c.x+412,c.y+436);
+    Vector2f p = Vector2f(arm.getPosition().x,arm.getPosition().y);
     cout << m.x << " " << m.y << " | " << p.y << " " << p.y << endl;
     sf::Vertex line[] = {m,p};
     window->draw(line, 2, sf::Lines);
     
-    rotation = atan2(m.y-p.y,m.x-p.x)*57.29-90;
+    rotation = atan2(m.y-p.y,m.x-p.x)*57.29;
     arm.setRotation(rotation);
     
     arm.setPosition(getPosition()+Vector2f(19,7));
